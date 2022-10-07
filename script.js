@@ -1,8 +1,8 @@
 // declare global variables
 var timeCompare = 9;
 var eventCompare = 9;
-var eventArr = [];
 
+// updates every time block on refresh/page load
 getLocal()
 
 // Sets date inside the header of the page
@@ -28,18 +28,6 @@ function changeBlockColor () {
 }
 changeBlockColor();
 
-// function that adds the correct text input into the correct object in the eventArr
-function textInput () {
-    for (i = 0; i <9; i++) {
-        
-        eventCompare++;
-        if (eventCompare > 17) {
-            return;
-        }
-        console.log(eventArr);
-    }
-}
-
 // gets local storage for all blocks on page load
 function getLocal () {
     var user = localStorage.getItem(`task-9`)
@@ -61,7 +49,7 @@ function getLocal () {
     var user = localStorage.getItem(`task-17`)
     $(`.task-input-17`).append(user);
 }
-// save button puts text in taskBlock into local storage/pulls from local storage
+// save button puts text in taskBlock into local storage/pulls from local storage for each hour block
 $(`.save-block-9`).on("click", function(event){
     event.preventDefault();
     var user = localStorage.getItem(`task-9`)
